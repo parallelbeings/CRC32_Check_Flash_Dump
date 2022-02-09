@@ -8,7 +8,7 @@ When we dump a flash memory in an embedded device we would like to check whether
 1. The script will read the given binary contents in block/sector/pages.
 2. The script will bruteforce/search for a CRC32 checksum value in each block/sector/pages and returns "-1" or "address of the crc value" when a match crc32 value is found.
 
-For example, the tool here was written for a GD25VE16C SPI NOR flash(16Mb/2MB). The datasheeet of the flash memory mentions the memory organization and how the Block/Sector/Page size is defined.
+For example, the tool  was written for a GD25VE16C SPI NOR flash(16Mb/2MB) dump read from an accucheck medical device. The datasheeet of the flash memory mentions the memory organization and how the Block/Sector/Page size is defined.
 
 The memory organization for the above example is,
 
@@ -40,4 +40,4 @@ python3 crc32_check.py
 ### Pending:
 1. To check an crc value in MSB or LSB first. Currently the script only searches for CRC value in Big endian mode(MSB first) but most microcontrollers store values in flash in little endian format. 
 2. Support for checking CRC16. Many microcontroller uses 16bit CRC checksum instead of CRC32 due to processing overhead. Again it is implementation specific. 
-3. 
+
