@@ -6,8 +6,7 @@ When we dump a flash memory in an embedded device we would like to check whether
 ### How it works:
 
 1. The utility will read the given binary contents in block/sector/pages.
-2. The utility will bruteforce/search for a CRC32 checksum value in each block/sector/pages. 
-3. Once a match is found, the utilty will print the CRC32 value found. 
+2. The utility will bruteforce/search for a CRC32 checksum value in each block/sector/pages and returns "-1" or "0" when a match crc32 value is found.
 
 For example, the tool here was written for a GD25VE16C SPI NOR flash(16Mb/2MB). The datasheeet of the flash memory mentions the memory organization and how the Block/Sector/Page size is defined.
 
@@ -26,15 +25,15 @@ So the value defined in the script(Line 11-13) is,
 
 ### How to use:
 
-1. Add the binary name in the script - Line 7. 
+1. Add the binary name to be checked in the crc32_check.py - Line 7. 
 2. Verify/Change the memory organization as per the target memory you want to check the crc entries - Line 11-13. 
 3. Install the python library requirements.
-``` 
-pip install -r requirements.txt 
-```
-
 4. Run the tool. 
 ``` 
 python3 crc32_check.py
 ```
+### Demo
+
+![](crc32_check.gif)
+
 
