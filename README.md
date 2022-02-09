@@ -1,6 +1,5 @@
-# CRC32_Check_Flash_Dump
 
-## Utility to find CRC32 checksum tables or entries in a binary dumped from a SPI/I2C NOR flash 
+## Utility to find CRC32 checksum tables or entries in a binary read from a SPI/I2C NOR flash 
 
 When we dump a flash memory in an embedded device we would like to check whether the binary has stored an CRC32 checksum with it. The checksum can be either in a table or an entry after each block/sector/page. 
 
