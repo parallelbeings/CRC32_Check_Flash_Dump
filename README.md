@@ -6,7 +6,7 @@ When we dump a flash memory in an embedded device we would like to check whether
 ### How it works:
 
 1. The script will read the given binary contents in block/sector/pages.
-2. The script will bruteforce/search for a CRC32 checksum value in each block/sector/pages and returns "-1" or "address of the crc value" when a match crc32 value is found.
+2. The script first calculate a CRC32 value for each block/sector/pages and then bruteforce/search for a CRC32 checksum value in the binary. Returns "-1" or "address of the crc value" when a match crc32 value is found.
 
 For example, the tool  was written for a GD25VE16C SPI NOR flash(16Mb/2MB) dump read from an accucheck medical device. The datasheeet of the flash memory mentions the memory organization and how the Block/Sector/Page size is defined.
 
