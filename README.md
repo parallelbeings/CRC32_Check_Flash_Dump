@@ -37,3 +37,7 @@ python3 crc32_check.py
 ![](crc32_check1.gif)
 
 
+### Pending:
+1. To check an crc value in MSB or LSB first. Currently the script only searches for CRC value in Big endian mode(MSB first) but most microcontrollers store values in flash in little endian format. 
+2. Support for checking CRC16. Many microcontroller uses 16bit CRC checksum instead of CRC32 due to processing overhead. Again it is implementation specific. 
+3. 
