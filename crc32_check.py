@@ -1,6 +1,6 @@
 
 import binascii
-import struct
+import time
 
 filename = "sample.bin"
 
@@ -131,14 +131,22 @@ def calculate_crc_page():
 print("-------------------------------------------------------------------------------")
 print("Calculate CRC for each Block and check whether the CRC is present inside the image")
 print("-------------------------------------------------------------------------------")
+time.sleep(3)
 calculate_crc_block()
+
+
 
 print("-------------------------------------------------------------------------------")
 print("Calculate CRC for each Sector and check whether the CRC is present inside the image ")
 print("-------------------------------------------------------------------------------")
+
+time.sleep(3)
 calculate_crc_sector()
+
+
 
 print("-------------------------------------------------------------------------------")
 print("Calculate CRC for each Page and check whether the CRC is present inside the image")
 print("-------------------------------------------------------------------------------")
+time.sleep(3)
 calculate_crc_page()
