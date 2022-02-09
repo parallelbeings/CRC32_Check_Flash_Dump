@@ -34,6 +34,6 @@ python3 crc32_check.py
 ```
 ### Demo
 
-![](crc32_check.gif)
+![](crc32_check1.gif)
 
 
