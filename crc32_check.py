@@ -48,16 +48,17 @@ def calculate_crc_block():
         f = open(filename, "rb")
         s = f.read()
         out = s.find(check)
+        out_hex = hex(out)
 
         print("CRC32 for address range:", hex(offset), " - ", hex(offset + block_size), ":", "CRC checksum:", ":",
-              hex_out,  ": Match Found:", out)
+              hex_out,  ": Match Found:", out_hex)
 
 
 def calculate_crc_sector():
     for i in range(0, 0x1fffff, 0x1000):  # Block 0 starting at address 0 to 0xffff
         f = open(filename, "rb")
-        offset = i
 
+        offset = i
         # Set offset for every iteration
         f.seek(offset, 1)
 
@@ -84,10 +85,11 @@ def calculate_crc_sector():
         f = open(filename, "rb")
         s = f.read()
         out = s.find(check)
+        out_hex = hex(out)
 
         # if out == -1:
         print("CRC32 for address range:", hex(offset), " - ", hex(offset + sector_size), ":", "CRC checksum:", ":",
-              hex_out, ": Match Found:", out)
+              hex_out, ": Match Found:", out_hex)
 
 
 def calculate_crc_page():
@@ -122,10 +124,11 @@ def calculate_crc_page():
         f = open(filename, "rb")
         s = f.read()
         out = s.find(check)
+        out_hex = hex(out)
 
         # if out == 0:
         print("CRC32 for address range:", hex(offset), " - ", hex(offset + page_size), ":", "CRC checksum:", ":", hex_out,
-              ": Match Found:", out)
+              ": Match Found:", out_hex)
 
 
 print("-------------------------------------------------------------------------------")
